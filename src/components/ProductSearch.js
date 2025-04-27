@@ -1,11 +1,15 @@
 import React, { useState, useContext, useEffect } from "react";
-import { ThemeContext } from "../App";
+
+import { ThemeContext, LanguageContext } from "../App";
 import useProductSearch from "../hooks/useProductSearch"; // Récupère les produits via ton hook
 import ProductList from "./ProductList";
 import useDebounce from "../hooks/useDebounce"; // Importer le hook useDebounce
 
+
 const ProductSearch = () => {
   const { isDarkTheme } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext); 
+
   const { products, loading, error } = useProductSearch(); 
   const [searchTerm, setSearchTerm] = useState("");  
   const [filteredProducts, setFilteredProducts] = useState([]); 
@@ -39,9 +43,10 @@ const ProductSearch = () => {
         type="text"
         value={searchTerm}
         onChange={handleSearch}
-        placeholder="Rechercher un produit..."
+        placeholder={language === "fr" ? "Rechercher un produit..." : "Search for a product..."}
         className={`form-control ${isDarkTheme ? 'bg-dark text-light' : ''}`}
       />
+
       <br />
 
       {}
