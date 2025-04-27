@@ -24,7 +24,8 @@ const App = () => {
               {language === "en" ? "Product Catalog" : "Catalogue de Produits"}
         </h1>
           <div className="d-flex justify-content-end gap-2">
-            <ThemeToggle />
+            <ThemeToggle />   
+            {/* TODO: Exercice 2.2 - Ajouter le sélecteur de langue */}
             <select
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
@@ -35,7 +36,7 @@ const App = () => {
                 <option value="fr">Français</option>
               </select>
 
-            {/* TODO: Exercice 2.2 - Ajouter le sélecteur de langue */}
+         
           </div>
         </header>
         <main>

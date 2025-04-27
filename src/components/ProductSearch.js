@@ -8,13 +8,11 @@ import useDebounce from "../hooks/useDebounce"; // Importer le hook useDebounce
 
 const ProductSearch = () => {
   const { isDarkTheme } = useContext(ThemeContext);
-  const { language } = useContext(LanguageContext); 
+  const { language } = useContext(LanguageContext); // TODO: Exercice 2.1 - Utiliser le LanguageContext
 
   const { products, loading, error } = useProductSearch(); 
   const [searchTerm, setSearchTerm] = useState("");  
   const [filteredProducts, setFilteredProducts] = useState([]); 
-   // TODO: Exercice 2.1 - Utiliser le LanguageContext
-   
   // TODO: Exercice 1.2 - Utiliser le hook useDebounce
   
   const debouncedSearchTerm = useDebounce(searchTerm, 500); // 500ms de délai
