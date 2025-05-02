@@ -1,17 +1,27 @@
 import { useState } from "react";
 
 const useLocalStorage = (key, initialValue) => {
- 
-  const storedValue = localStorage.getItem(key);
-  const [value, setValue] = useState(storedValue ? JSON.parse(storedValue) : initialValue);
+  let initial;
+  try {
+    const item = localStorage.getItem(key);
+    initial = item ? JSON.parse(item) : initialValue;
+  } catch (error) {
+    console.error("Erreur parsing localStorage", error);
+    initial = initialValue;
+  }
 
-  // Met à jour le localStorage 
+  const [value, setValue] = useState(initial);
+
   const setStoredValue = (newValue) => {
     setValue(newValue);
-    localStorage.setItem(key, JSON.stringify(newValue)); // Sauvegarde la nouvelle valeur dans le LocalStorage
+    try {
+      localStorage.setItem(key, JSON.stringify(newValue));
+    } catch (error) {
+      console.error("Erreur lors de l’enregistrement dans le localStorage", error);
+    }
   };
 
-  return [value, setStoredValue]; // Retourne la valeur et la fonction de mise à jour
+  return [value, setStoredValue];
 };
 
 export default useLocalStorage;

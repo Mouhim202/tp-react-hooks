@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
 
 import { ThemeContext, LanguageContext } from "../App";
-import useProductSearch from "../hooks/useProductSearch"; // Récupère les produits via ton hook
+import useProductSearch from "../hooks/useProductSearch"; 
 import ProductList from "./ProductList";
-import useDebounce from "../hooks/useDebounce"; // Importer le hook useDebounce
+import useDebounce from "../hooks/useDebounce"; 
 
 
 const ProductSearch = () => {
@@ -46,13 +46,14 @@ const ProductSearch = () => {
       />
 
       <br />
-
+    
       {}
       <ProductList 
         products={filteredProducts} 
         loading={loading} 
         error={error}
       />
+
     </div>
   );
 };
