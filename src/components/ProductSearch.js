@@ -45,19 +45,22 @@ const ProductSearch = () => {
   return (
     <div className="mb-4">
       {}
+      <div className="d-flex ">
       <input
         type="text"
         value={searchTerm}
         onChange={handleSearch}
         placeholder={language === "fr" ? "Rechercher un produit..." : "Search for a product..."}
-        className={`form-control ${isDarkTheme ? 'bg-dark text-light' : ''}`}
+        className={`form-control ${isDarkTheme ? 'dark-placeholder bg-dark text-white border-light' : ''}`}
       />
+
    
-      <button onClick={handleReload} className="btn btn-primary">
+      <button onClick={handleReload} className="btn btn-secondary ms-3">
       {language === "fr" ? "Recharger" : "Reload"}
       </button>
       <br />
-    
+      </div> 
+      <br /> 
       {}
       <ProductList 
         products={filteredProducts} 
@@ -72,6 +75,7 @@ const ProductSearch = () => {
     />
 
     </div>
+    
   );
 };
 

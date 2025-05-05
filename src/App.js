@@ -27,15 +27,19 @@ const App = () => {
             <ThemeToggle />   
             {/* TODO: Exercice 2.2 - Ajouter le sélecteur de langue */}
             <select
-                value={language}
-                onChange={(e) => setLanguage(e.target.value)}
-                className={`form-select ${isDarkTheme ? 'bg-dark text-light' : ''}`}
-                style={{ width: '150px' }}
-              >
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-              </select>
-
+                  value={language}
+                  onChange={(e) => setLanguage(e.target.value)}
+                  className={`px-3 py-2 rounded border ${
+                    isDarkTheme
+                      ? 'bg-transparent text-light border-light'
+                      : 'bg-transparent text-dark border-dark'
+                  }`}
+                  style={{ width: '150px' }}
+                >
+                  <option value="en">English</option>
+                  <option value="fr">Français</option>
+                </select>
+    
          
           </div>
         </header>

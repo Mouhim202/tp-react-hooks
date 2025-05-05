@@ -34,7 +34,7 @@
                       src={product.thumbnail}
                       className="card-img-top"
                       alt={product.title}
-                      style={{ height: "200px", objectFit: "cover" }}
+                      style={{ height: "300px", objectFit: "cover" }}
                     />
                   )}
                   <div className="card-body">
