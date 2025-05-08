@@ -54,7 +54,7 @@ Pour chaque exercice :
 _Votre réponse pour l'exercice 1 :_
 ```
 Expliquez votre solution ici
-<img src="images/exercice1.png" alt="Exercice 1">
+<img src="./images/exercice1.png" alt="Exercice 1">
 
 
 [Ajoutez vos captures d'écran]
