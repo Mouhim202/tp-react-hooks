@@ -54,12 +54,25 @@ Pour chaque exercice :
 _Votre réponse pour l'exercice 1 :_
 ```
 Expliquez votre solution ici
-
-<img src="images/exercice1.png" alt="Exercice 1">
-
-
-[Ajoutez vos captures d'écran]
-```
+1/Objectif
+Dans cet exercice, j'ai implémenté une fonctionnalité de recherche en temps réel dans une liste de produits. L’objectif était d’utiliser les hooks React (useState, useEffect) pour réagir aux saisies de l’utilisateur, et d’ajouter un effet de "debounce" pour ne pas exécuter la recherche à chaque frappe, mais seulement après un petit délai (500 ms).
+2/Étapes de réalisation
+2.1 Création de l’état pour le champ de recherche
+J’ai utilisé useState pour stocker la valeur du champ de recherche :
+### const [searchTerm, setSearchTerm] = useState("");
+Cela me permet de mettre à jour dynamiquement la valeur saisie par l’utilisateur.
+2.2 Développement du hook personnalisé useDebounce
+Pour optimiser la recherche, j’ai créé un hook useDebounce. Ce hook attend un certain délai avant de mettre à jour la valeur finale utilisée pour la recherche. Cela permet d’éviter de déclencher l'effet de recherche à chaque caractère tapé.
+### const debouncedSearchTerm = useDebounce(searchTerm, 500);
+2.3 Utilisation de useEffect pour filtrer les produits
+Une fois que j’ai obtenu la version "débouncée" du champ de recherche, j’ai utilisé useEffect pour filtrer la liste des produits.
+Ce filtre est appliqué uniquement après que l’utilisateur a arrêté de taper pendant 500 ms, ce qui évite de filtrer inutilement à chaque frappe.
+2.4 Interface utilisateur
+J’ai ajouté un champ de recherche (input) :
+3/Résultat obtenu
+La recherche fonctionne en temps réel avec un léger délai grâce au debounce.
+Cela rend l’expérience utilisateur plus fluide et évite des traitements inutiles quand l’utilisateur tape rapidement.
+<img src="public/images/exercice1.png" alt="exercice 1">
 
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue
