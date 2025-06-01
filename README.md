@@ -72,8 +72,12 @@ J’ai ajouté un champ de recherche (input) :
 3/Résultat obtenu
 La recherche fonctionne en temps réel avec un léger délai grâce au debounce.
 Cela rend l’expérience utilisateur plus fluide et évite des traitements inutiles quand l’utilisateur tape rapidement.
-<img src="public/images/exercice1.png" alt="exercice 1">
+### 🖼️ Captures d'écran :
+<img src="./public/images/exercice1.png" alt="exercice 1">
 
+
+_Votre réponse pour l'exercice 2 :_
+```
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue
 
